@@ -48,6 +48,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   rake
   sinatra
   sinatra-activerecord
