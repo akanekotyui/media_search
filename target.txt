@@ -1,0 +1,6 @@
+#ID , title , author , URL
+Image1 , Les visages de la Joconde , Leonardo di ser Piero da Vinci , http://www.louvre.fr/francais/magazine/peint/joconde/jocon_f.htm
+Image2 , The Starry Night , Vincent van Gogh , http://www.moma.org/docs/collection/paintsculpt/c58.htm
+Image3 , The Jolly Flatboatmen in Port , George Caleb Bingham , http://www.slam.org/am1.html
+Image4 , Waterfall 1961 , M.C. Escher , http://national.gallery.ca/slidekits/slidekit_escher/sk_escher10.html
+Image5 , Garden of the Princess Louvre , Claude Monet , http://www.monetalia.com/paintings/monet-garden-of-the-princess-louvre.aspx

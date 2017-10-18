@@ -14,14 +14,10 @@
 <div align="center">
 
   <%= @keyword %>
-</body>
-</html>
 
-db = SQLite3::Database.new("image.db")
-db.transaction{
-db.execute("select * from image where name like ?;",keyword){|row|
-print(CGI.escapeHTML(row[0]),"::",CGI.escapeHTML(row[1]),"::",CGI.escapeHTML(row[2]),"\n")
-}
-}
+<% db = SQLite3::Database.new 'image.db' %>
+ <% db.transaction{ %>
+<%   db.execute("select * from image where title like ?;",@keyword){ %>
+<%     |row|print(CGI.escapeHTML(row[0]),"::",CGI.escapeHTML(row[1]),"::",CGI.escapeHTML(row[2]),"\n") }}%>
 
-db.close
+<% db.close %>
