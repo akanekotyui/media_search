@@ -13,11 +13,27 @@
 <hr align="center" noshade width="80%"/>
 <div align="center">
 
-  <%= @keyword %>
+<% db = SQLite3::Database.new 'images.sqlite3' %>
+<% db.transaction() { %>
+<%   db.execute("SELECT * FROM images;"){|row| %>
+<%  ("%s:%s:%s:%s¥n",row[0],row[1],row[2],row[3]) %>
+<%   } %>
+<% } %>
 
-<% db = SQLite3::Database.new 'image.db' %>
- <% db.transaction{ %>
-<%   db.execute("select * from image where title like ?;",@keyword){ %>
-<%     |row|print(CGI.escapeHTML(row[0]),"::",CGI.escapeHTML(row[1]),"::",CGI.escapeHTML(row[2]),"\n") }}%>
+<table border="1" align="center">
+<tr>
+ <th>ID</th><th>title</th><th>author</th>
+</tr>
+<% images.each do |i| %>
+<tr>
+<td><%= i.id %></td>
+<td><%= i.title %></td>
+<td><%= i.author %></td>
+<td><%= i.url %></td>
+</tr>
+<% end %>
+</table>
 
 <% db.close %>
+</body>
+</html>

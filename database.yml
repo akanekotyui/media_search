@@ -1,3 +1,7 @@
+#images.sqlite3の中にあるimagesテーブルに接続する
+
 development:
   adapter: sqlite3
-  database: image.db
+  database: images.sqlite3
+  host: localhost
+  encoding: utf8
