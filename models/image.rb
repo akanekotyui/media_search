@@ -1,10 +1,7 @@
-class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
-end
+#ActiveRecordのモデルを作成する
+#Imageモデルとimagesテーブルを作成
 
-ActiveRecord::Base.configurations = YAML.load_file('database.yml')
-ActiveRecord::Base.establish_connection('development')
+ActiveRecord::Base.establish_connection('sqlite3:///models.db') #image.db
 
-
-class Image < ActiveRecord
+class Image < ActiveRecord::Base
 end

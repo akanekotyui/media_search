@@ -13,12 +13,7 @@
 <hr align="center" noshade width="80%"/>
 <div align="center">
 
-<% db = SQLite3::Database.new 'images.sqlite3' %>
-<% db.transaction() { %>
-<%   db.execute("SELECT * FROM images;"){|row| %>
-<%  ("%s:%s:%s:%s¥n",row[0],row[1],row[2],row[3]) %>
-<%   } %>
-<% } %>
+ <%# db = SQLite3::Database.new 'images.sqlite3' %>
 
 <table border="1" align="center">
 <tr>
