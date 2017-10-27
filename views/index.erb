@@ -26,29 +26,18 @@
 
 <caption>検索対象データ</caption>
 
+
 <tr>
- <th>ID</th><th>title</th><th>author</th>
+ <th>ID</th><th>title</th><th>author</th><th>url</th>
 </tr>
+<% images.each do |i| %>
 <tr>
- <td><a href="http://cybele.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/mona_lisa.jpg">Image1</a></td>
- <td>Les visages de la Joconde</td><td>Leonardo di ser Piero da Vinci</td>
+<td><%= i.id %></td>
+<td><%= i.title %></td>
+<td><%= i.author %></td>
+<td><%= i.url %></td>
 </tr>
-<tr>
- <td><a href="http://cybele.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/starry_night.jpg">Image2</a></td>
- <td>The Starry Night</td><td>Vincent van Gogh</td>
-</tr>
-<tr>
- <td><a href="http://cybele.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/image3.jpg">Image3</a></td>
- <td>The Jolly Flatboatmen in Port</td><td>George Caleb Bingham</td>
-</tr>
-<tr>
- <td><a href="http://cybele.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/waterfall.jpg">Image4</a></td>
- <td>Waterfall 1961</td><td>M.C. Escher</td>
-</tr>
-<tr>
- <td><a href="http://cybele.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/garden-of-the-princess-louvre.jpg">Image5</a></td>
- <td>Garden of the Princess, Louvre</td><td>Claude Monet</td>
-</tr>
+<% end %>
 
 </table>
 

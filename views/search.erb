@@ -13,11 +13,9 @@
 <hr align="center" noshade width="80%"/>
 <div align="center">
 
- <%# db = SQLite3::Database.new 'images.sqlite3' %>
-
 <table border="1" align="center">
 <tr>
- <th>ID</th><th>title</th><th>author</th>
+ <th>ID</th><th>title</th><th>author</th><th>url</th>
 </tr>
 <% images.each do |i| %>
 <tr>
@@ -29,6 +27,5 @@
 <% end %>
 </table>
 
-<% db.close %>
 </body>
 </html>
