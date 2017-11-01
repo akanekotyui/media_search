@@ -22,12 +22,11 @@ post '/search.erb' do
 end
 
 
-post 'new' do
+post '/new' do
   image = Image.new
-  image.image_id = params[:image_id]
   image.title = params[:title]
   image.author = params[:author]
   image.url = params[:url]
-  student.save
+  image.save
   redirect '/'
 end
