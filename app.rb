@@ -16,8 +16,9 @@ end
 
 post '/search.erb' do
  @keyword = params[:KEYWORD]
-    images = Image.all
-  erb :search, locals:{images: images}
+# images = Image.all
+ results = Image.where("(title like ?) or (author like ?) or (url like ?) ", @keyword, @keyword, @keyword)
+  erb :search, locals:{results: results}
 #  "Hello World"
 end
 
