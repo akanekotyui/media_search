@@ -38,7 +38,15 @@
 <td><%= i.url %></td>
 </tr>
 <% end %>
-
+<form method="post" action='new'>
+    <tr>
+      <td><input type="string" name="image_id"></td>
+      <td><input type="string" name="title"></td>
+      <td><input type="string" name="author"></td>
+      <td><input type="text" name="url"></td>
+      <td><input type="submit" value="登録"></td>
+    </tr>
+    </form>
 </table>
 
 <hr align="center" noshade width="80%"/>

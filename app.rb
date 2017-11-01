@@ -15,7 +15,19 @@ erb :index,  locals:{images: images} #ルートにアクセスしたらindex.erb
 end
 
 post '/search.erb' do
-  @keyword = params[:KEYWORD]
+ @keyword = params[:KEYWORD]
     images = Image.all
   erb :search, locals:{images: images}
+#  "Hello World"
+end
+
+
+post 'new' do
+  image = Image.new
+  image.image_id = params[:image_id]
+  image.title = params[:title]
+  image.author = params[:author]
+  image.url = params[:url]
+  student.save
+  redirect '/'
 end
