@@ -4,18 +4,23 @@
 
 <head>
  <meta http-equiv="Content-Type" content="text/html;charset=ISO-2022-JP"/>
- <title>メディア情報検索の基礎 課題1-1 sample</title>
+ <title>メディア情報検索の基礎</title>
 </head>
 
 <body bgcolor="white" text="black">
 
-<h1 align="center">メディア情報検索の基礎　課題1-1</h1>
+<h1 align="center">メディア情報検索</h1>
 <hr align="center" noshade width="80%"/>
 <div align="center">
 
 <form method="post" action="search.erb">
 <input type="text" name="KEYWORD" size="15"/>
-<input type="submit" value="submit"/>
+<input type="submit" value="検索"/>
+</form>
+
+<form method="post" action="same.erb">
+<input type="text" name="STD" size="15"/>
+<input type="submit" value="類似検索"/>
 </form>
 
 </div>
@@ -52,7 +57,8 @@
 <hr align="center" noshade width="80%"/>
 
 <div align="center">
-<a href="./">戻る</a>
+<a href = "./"> 戻る </a>
+<a href = "./same"> 類似検索システム </a>
 </div>
 
 </body>

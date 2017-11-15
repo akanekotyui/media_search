@@ -14,14 +14,17 @@ get '/' do
 erb :index,  locals:{images: images} #ルートにアクセスしたらindex.erbを呼び出す
 end
 
+get '/same' do
+  #@std = parames[:STD]
+  erb :same
+end
+
 post '/search.erb' do
  @keyword = params[:KEYWORD]
 # images = Image.all
    results = Image.where("(title like ?) or (author like ?) or (url like ?) ", "%"+@keyword+"%", "%"+@keyword+"%", "%"+@keyword+"%")
   erb :search, locals:{results: results}
 end
-
-
 
 post '/new' do
   image = Image.new
@@ -30,4 +33,9 @@ post '/new' do
   image.url = params[:url]
   image.save
   redirect '/'
+end
+
+post '/same.erb' do
+  @std = params[:STD]
+  erb :same
 end
