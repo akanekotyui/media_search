@@ -36,6 +36,6 @@ post '/new' do
 end
 
 post '/same.erb' do
-  @std = params[:STD]
+  @std = params[:STD].to_i
   erb :same
 end

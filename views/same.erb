@@ -17,24 +17,19 @@
   です。
 
 
-#画像の色情報を定義する
-#二次元配列　[image番号][R,G,B]
-image = Array.new(5).map{Array.new(3)}
-image = [[0.2, 0.5, 0.5], [0.3, 0.4, 0.7], [0.8, 0.5, 0.7], [0.5, 0.5, 0.5], [0.1, 0.7, 0.4]]
+<%# 画像の色情報を定義する
+#二次元配列　[image番号][R,G,B]%>
+<% image = Array.new(5).map{Array.new(3)} %>
+<% image = [[0.2, 0.5, 0.5], [0.3, 0.4, 0.7], [0.8, 0.5, 0.7], [0.5, 0.5, 0.5], [0.1, 0.7, 0.4]] %>
 
-#類似度を計算する, ans配列に答を格納していく
-std = 0 #基準にするimage番号
-ans = Hash.new { |hash, key| hash[key] = {} }
-for i in 0..4 #imageの数
-   temp_r = image[std][0] * image[i][0]
-   temp_g = image[std][1] * image[i][1]
-   temp_b = image[std][2] * image[i][2]
-   ans[i] = temp_r + temp_g + temp_b
-end
-p ans
+<%# 類似度を計算する, ans配列に答を格納していく %>
+<% ans = Hash.new { |hash, key| hash[key] = {} } %>
+<% for i in 0..4 %> <%# imageの数 %>
+<%   temp_r = image[@std][0] * image[i][0] %>
+<%   temp_g = image[@std][1] * image[i][1] %>
+<%   temp_b = image[@std][2] * image[i][2] %>
+<%   ans[i] = temp_r + temp_g + temp_b %>
+<% end %>
 
-#類似度が高いものからソートする
-p ans.sort{|(k1, v1), (k2, v2)| v2 <=> v1 }
-
-
-#出力する
+<%# 類似度が高いものからソートする %>
+<%= ans.sort{|(k1, v1), (k2, v2)| v2 <=> v1 } %>
