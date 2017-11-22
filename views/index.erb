@@ -3,63 +3,63 @@
 <html lang="JA">
 
 <head>
- <meta http-equiv="Content-Type" content="text/html;charset=ISO-2022-JP"/>
- <title>メディア情報検索の基礎</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=ISO-2022-JP"/>
+  <title>メディア情報検索の基礎</title>
 </head>
 
 <body bgcolor="white" text="black">
 
-<h1 align="center">メディア情報検索</h1>
-<hr align="center" noshade width="80%"/>
-<div align="center">
+  <h1 align="center">メディア情報検索</h1>
+  <hr align="center" noshade width="80%"/>
+  <div align="center">
 
-<form method="post" action="search.erb">
-<input type="text" name="KEYWORD" size="15"/>
-<input type="submit" value="検索"/>
-</form>
-
-<form method="post" action="same.erb">
-<input type="text" name="STD" size="15"/>
-<input type="submit" value="類似検索"/>
-</form>
-
-</div>
-
-<hr align="center" noshade width="80%"/>
-
-<table border="1" align="center">
-
-<caption>検索対象データ</caption>
-
-
-<tr>
- <th>ID</th><th>title</th><th>author</th><th>url</th>
-</tr>
-<% images.each do |i| %>
-<tr>
-<td><%= i.id %></td>
-<td><%= i.title %></td>
-<td><%= i.author %></td>
-<td><%= i.url %></td>
-</tr>
-<% end %>
-<form method="post" action='new'>
-    <tr>
-      <td><input type="string" name="image_id"></td>
-      <td><input type="string" name="title"></td>
-      <td><input type="string" name="author"></td>
-      <td><input type="text" name="url"></td>
-      <td><input type="submit" value="登録"></td>
-    </tr>
+    <form method="post" action="search.erb">
+      <input type="text" name="KEYWORD" size="15"/>
+      <input type="submit" value="検索"/>
     </form>
-</table>
 
-<hr align="center" noshade width="80%"/>
+    <form method="post" action="same.erb">
+      <input type="text" name="STD" size="15"/>
+      <input type="submit" value="類似検索"/>
+    </form>
 
-<div align="center">
-<a href = "./"> 戻る </a>
-<a href = "./same"> 類似検索システム </a>
-</div>
+  </div>
+
+  <hr align="center" noshade width="80%"/>
+
+  <table border="1" align="center">
+
+    <caption>検索対象データ</caption>
+    
+
+    <tr>
+      <th>ID</th><th>title</th><th>author</th><th>url</th>
+    </tr>
+    <% images.each do |i| %>
+    <tr>
+      <td><%= i.id %></td>
+      <td><%= i.title %></td>
+      <td><%= i.author %></td>
+      <td><%= i.url %></td>
+    </tr>
+    <% end %>
+    <form method="post" action='new'>
+      <tr>
+        <td><input type="string" name="image_id"></td>
+        <td><input type="string" name="title"></td>
+        <td><input type="string" name="author"></td>
+        <td><input type="text" name="url"></td>
+        <td><input type="submit" value="登録"></td>
+      </tr>
+    </form>
+  </table>
+
+  <hr align="center" noshade width="80%"/>
+
+  <div align="center">
+    <a href = "./"> 戻る </a>
+    <a href = "./same"> 類似検索システム </a>
+  </div>
 
 </body>
 

@@ -6,7 +6,7 @@ require 'SQLite3'
 require 'sinatra/activerecord'
 
 
-set :database, adapter: "sqlite3", database: "images.sqlite3"
+set :database, adapter: "sqlite3", database: "images_sqlite3"
 require './models/image.rb'
 
 get '/' do
@@ -37,5 +37,6 @@ end
 
 post '/same.erb' do
   @std = params[:STD].to_i
-  erb :same
+  images = Image.all
+  erb :same, locals:{images: images}
 end

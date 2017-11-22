@@ -2,6 +2,6 @@
 
 development:
   adapter: sqlite3
-  database: images.sqlite3
+  database: images_sqlite3
   host: localhost
   encoding: utf8
