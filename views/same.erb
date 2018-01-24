@@ -12,10 +12,6 @@
   <h1 align="center">検索結果</h1>
   <hr align="center" noshade width="80%"/>
   <div align="center">
-    入力されたキーワードは
-    <%= @std %>
-    です。
-
 
     <%# 画像の色情報を定義する
     #二次元配列　[image番号][R,G,B]%>
@@ -33,41 +29,13 @@
 
     <%# 類似度が高いものからソートする %>
     <% ans_s = ans.sort{|(k1, v1), (k2, v2)| v2 <=> v1 } %>
-    <%= sorted_ids = ans_s.map(&:first) %>
+    <% sorted_ids = ans_s.map(&:first) %>
 
 <% sorted_ids.each.with_index do |id,index| %>
 <p> <%=  index + 1%>番目に似ています</p>
 <img src = "<%= Image.find(id + 1).url %>" width="300"><br>
 <% end %>
-    <%# imageもソートする %>
-    <%# images_sort = images.find(ans_s[0].to_i + 1) %>
 
-    <%# 配列をひとつにまとめる %>
-    <%# ans_s.push(images_sort) %>
-    <% ans_s.flatten! %>
-
-    <%# 出力する %>
-    <table border="0" >
-      <tr>
-        <td>
-          <table border="1">
-            <tr>
-              <th>ID</th><th>類似度</th><th>title</th><th>author</th><th>url</th>
-            </tr>
-            <% ans_s.each do |a| %>
-            <tr>
-              <td><%= a %></td>
-              <td><%= a %></td>
-              <td><%= a %></td>
-              <td><%= a %></td>
-              <td><%= a %></td>
-
-
-
-              <% end %>
-
-
-            </table>
             <div align = "center">
               <a href = "./"> 戻る </a>
             </div>
