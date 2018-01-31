@@ -1,23 +1,18 @@
 <%# ファイルを読み込む %>
-<% file = File.open("images/1r.ppm", "rb") %>
+<% file = File.open("images/1r.ppm", "r") %>
 
 <%# 初めの1行をよみとばす(P3) %>
 <% line = 0 %>
-<%  while line < 1 %>
-<%      puts file.gets %>
-<%  end %>
+<%# puts file.gets %>
 <% line = line + 1 %>
 
-
 <%# 全体のピクセル数を格納する %>
-<% puts file.gets %>
+<%  %>
 <% line = line + 1 %>
 
 <%# 次の1行も読み飛ばす(255) %>
-<%  while line < 3 %>
-<%      puts file.gets %>
+<% puts file.gets %>
 <% line = line + 1 %>
-<%  end %>
 
 
 <%# ピクセルを全て足し合わせる %>
@@ -30,8 +25,8 @@
     <% p r_sum %>
 
     <%# たて*よこ*256で割った値を算出する %>
-    <%# r = r_sum / @hight * @width * 256 %>
-    <%# p r %>
+    <% r = r_sum / (400.0 * 486 * 256) %>
+    <% p r %>
     <%#  %>
     <%#  %>
     <%#  %>
