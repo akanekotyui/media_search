@@ -12,3 +12,21 @@ INSERT INTO images VALUES(2, 'The Starry Night', 'Vincent van Gogh', 'http://www
 INSERT INTO images VALUES(3, 'The Jolly Flatboatmen in Port', 'George Caleb Bingham', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/image3.jpg');
 INSERT INTO images VALUES(4, 'Waterfall 1961', 'M.C. Escher', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/waterfall.jpg');
 INSERT INTO images VALUES(5, 'Garden of the Princess Louvre', 'Claude Monet', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/garden-of-the-princess-louvre.jpg');
+
+CREATE TABLE IF NOT EXISTS yuru_chars (
+  id integer primary key,
+  name varchar(50),
+  pref varchar(50),
+  area varchar(50)
+);
+
+INSERT INTO yuru_chars VALUES(1, 'くまモン', '熊本県', '九州');
+INSERT INTO yuru_chars VALUES(2, 'いまばりバリィさん', '愛媛県', '四国');
+INSERT INTO yuru_chars VALUES(3, 'にしこくん', '東京都', '関東');
+INSERT INTO yuru_chars VALUES(4, '与一くん', '栃木県', '関東');
+INSERT INTO yuru_chars VALUES(5, 'はち丸・なだも・エリザベス', '愛知県', '東海');
+INSERT INTO yuru_chars VALUES(6, 'ふっかちゃん', '大阪府', '関西');
+INSERT INTO yuru_chars VALUES(7, 'モモマルくん', '福岡県', '九州');
+INSERT INTO yuru_chars VALUES(8, 'やなな', '岐阜県', '東海');
+INSERT INTO yuru_chars VALUES(9, '滝ノ道ゆずる', '大阪府', '関西');
+INSERT INTO yuru_chars VALUES(10, 'レルヒさん', '新潟県', '北陸');

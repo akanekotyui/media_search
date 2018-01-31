@@ -40,3 +40,7 @@ post '/same.erb' do
   images = Image.all
   erb :same, locals:{images: images}
 end
+
+get '/ppm.erb' do
+  erb :ppm
+end
