@@ -4,7 +4,7 @@ require 'sinatra'
 require 'sinatra/reloader' #編集しても再起動せずにアプリが動く
 require 'SQLite3'
 require 'sinatra/activerecord'
-require 'rmagick'
+
 
 set :database, adapter: "sqlite3", database: "images_sqlite3"
 require './models/image.rb'
@@ -17,10 +17,6 @@ end
 get '/same' do
   #@std = parames[:STD]
   erb :same
-end
-
-get '/ppm' do
-  erb :ppm
 end
 
 post '/search.erb' do
@@ -45,8 +41,6 @@ post '/same.erb' do
   erb :same, locals:{images: images}
 end
 
-post '/ppm.erb' do
-  @ppm = params[:PPM]
-  images = Magick::ImageList.new(@ppm)
-  erb :ppm, locals:{images: images}
+get '/ppm.erb' do
+  erb :ppm
 end
