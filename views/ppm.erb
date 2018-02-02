@@ -31,17 +31,14 @@
 
 <% pix_clo = all_p * 256 * 256.0 %>
 <%= r = all_r / pix_clo %>
-<%= @g = all_g / pix_clo %>
-<%= @b = all_b / pix_clo %>
+<%= g = all_g / pix_clo %>
+<%= b = all_b / pix_clo %>
 
-<%#= p r %>
-<%#= p g %>
-<%#= p b %>
 <%# データベースに保存する %>
 <% images = Image.new %>
 <% images.r = r %>
-<%# images.g = @g %>
-<%# images.b = @b %>
+<% images.g = g %>
+<% images.b = b %>
 
     <%# 類似度別にソートする %>
 
