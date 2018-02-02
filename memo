@@ -2,12 +2,15 @@ CREATE TABLE IF NOT EXISTS images (
   id integer primary key,
   title varchar(50),
   author varchar(50),
-  url text
+  url text,
+  r real,
+  g real,
+  b real
 );
 
 DELETE FROM images;
 
-INSERT INTO images VALUES(1, 'Les visages de la Joconde', 'Leonardo di ser Piero da Vinci', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/mona_lisa.jpg');
+INSERT INTO images VALUES(1, 'Les visages de la Joconde', 'Leonardo di ser Piero da Vinci', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/mona_lisa.jpg', 0, 0, 0);
 INSERT INTO images VALUES(2, 'The Starry Night', 'Vincent van Gogh', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/starry_night.jpg');
 INSERT INTO images VALUES(3, 'The Jolly Flatboatmen in Port', 'George Caleb Bingham', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/image3.jpg');
 INSERT INTO images VALUES(4, 'Waterfall 1961', 'M.C. Escher', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/waterfall.jpg');

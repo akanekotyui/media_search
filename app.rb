@@ -47,6 +47,7 @@ end
 
 post '/ppm.erb' do
   @ppm = params[:PPM]
-  images = Magick::ImageList.new(@ppm)
-  erb :ppm, locals:{images: images}
+  images = Image.all
+  scr = Magick::ImageList.new(@ppm)
+  erb :ppm, locals:{images: images, scr: scr}
 end

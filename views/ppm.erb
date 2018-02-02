@@ -17,11 +17,11 @@
 <%= @ppm %>
 
 <%# RGBのピクセル情報を取得し、変数に格納する %>
-<% width = images.columns %>
-<% hight = images.rows %>
+<% width = scr.columns %>
+<% hight = scr.rows %>
 <% all_p = width * hight %>
 
-<% pixels = images.get_pixels(0, 0, images.columns, images.rows) %>
+<% pixels = scr.get_pixels(0, 0, scr.columns, scr.rows) %>
 <% all_r = all_g = all_b = 0 %>
 <% for pi in 0...all_p %>
 <% all_r += pixels[pi].red %>
@@ -30,13 +30,18 @@
 <% end %>
 
 <% pix_clo = all_p * 256 * 256.0 %>
-<% r = all_r / pix_clo %>
-<% g = all_g / pix_clo %>
-<% b = all_b / pix_clo %>
+<%= @r = all_r / pix_clo %>
+<%= @g = all_g / pix_clo %>
+<%= @b = all_b / pix_clo %>
 
-<%= p r %>
-<%= p g %>
-<%= p b %>
+<%#= p r %>
+<%#= p g %>
+<%#= p b %>
 <%# データベースに保存する %>
+<%# images.r = @r %>
+<%# images.g = @g %>
+<%# images.b = @b %>
+
     <%# 類似度別にソートする %>
+
     <%# 結果を表示する %>
