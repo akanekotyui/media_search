@@ -35,11 +35,12 @@
 <%= b = all_b / pix_clo %>
 
 <%# データベースに保存する %>
-<% image = Image.new %>
-<% image.r = r %>
-<% image.g = g %>
-<% image.b = b %>
+<% images = Image.where(url: @ppm).update(r: r, g: g, b: b) %>
 
+<%# image.r = r %>
+<%# image.g = g %>
+<%# image.b = b %>
+<%# image.save %>
     <%# 類似度別にソートする %>
 
     <%# 結果を表示する %>
