@@ -14,12 +14,12 @@ INSERT INTO images VALUES(1, 'Les visages de la Joconde', 'Leonardo di ser Piero
 INSERT INTO images VALUES(2, 'The Starry Night', 'Vincent van Gogh', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/starry_night.jpg',0 ,0 ,0);
 INSERT INTO images VALUES(3, 'The Jolly Flatboatmen in Port', 'George Caleb Bingham', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/image3.jpg',0 ,0 ,0);
 INSERT INTO images VALUES(4, 'Waterfall 1961', 'M.C. Escher', 'http://www.mma.cs.tsukuba.ac.jp/syllabus/mmsearch/images/waterfall.jpg',0 ,0 ,0);
-INSERT INTO images VALUES(5, 'Kumamon', 'kumamoto', '00000001.jpg' ,0 ,0 ,0);
-INSERT INTO images VALUES(6, 'Varisan', 'ehime', '00000002.jpg' ,0 ,0 ,0);
-INSERT INTO images VALUES(7, 'Nishikokun', 'Tokyo', '00000003.jpg' ,0 ,0 ,0);
-INSERT INTO images VALUES(8, 'Yoichikun', 'Tochigi', '00000004.jpg' ,0 ,0 ,0);
-INSERT INTO images VALUES(9, 'Hachimaru', 'Aichi', '00000005.jpg' ,0 ,0 ,0);
-INSERT INTO images VALUES(10, 'Fukkachan', 'Saitama', '00000006.jpg' ,0 ,0 ,0);
+INSERT INTO images VALUES(5, 'Kumamon', 'kumamoto', 'http://cgi.u.tsukuba.ac.jp/~s1511465/media_search/00000001.jpg' ,0 ,0 ,0);
+INSERT INTO images VALUES(6, 'Varisan', 'ehime', 'http://cgi.u.tsukuba.ac.jp/~s1511465/media_search/00000002.jpg' ,0 ,0 ,0);
+INSERT INTO images VALUES(7, 'Nishikokun', 'Tokyo', 'http://cgi.u.tsukuba.ac.jp/~s1511465/media_search/00000003.jpg' ,0 ,0 ,0);
+INSERT INTO images VALUES(8, 'Yoichikun', 'Tochigi', 'http://cgi.u.tsukuba.ac.jp/~s1511465/media_search/00000004.jpg' ,0 ,0 ,0);
+INSERT INTO images VALUES(9, 'Hachimaru', 'Aichi', 'http://cgi.u.tsukuba.ac.jp/~s1511465/media_search/00000005.jpg' ,0 ,0 ,0);
+INSERT INTO images VALUES(10, 'Fukkachan', 'Saitama', 'http://cgi.u.tsukuba.ac.jp/~s1511465/media_search/00000006.jpg' ,0 ,0 ,0);
 
 
 CREATE TABLE IF NOT EXISTS yurukyaras (

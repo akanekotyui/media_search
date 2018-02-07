@@ -13,26 +13,23 @@
   <hr align="center" noshade width="80%"/>
   <div align="center">
 
-  <%= p "入力されたyurukyaraキーワードは"%>
-  <%= @yurukyara  %>
+    <%= p "入力されたyurukyaraキーワードは"%>
+    <%= @yurukyara  %>
 
-<%# 対象のレコードを変数に格納しておく %>
-<%= p yurukyaras[0].ido %>
-  <% yurukyara_ido = yurukyara_keido = 0 %>
-  <% yurukyara = Image.where(url: @yurukyara) %>
-  <% yurukyaras.each do  |i|  %>
+    <%# 対象のレコードを変数に格納しておく %>
+    <% yurukyara_ido = yurukyara_keido = 0 %>
+    <% yurukyara = Yurukyara.where(url: @yurukyara) %>
+    <% yurukyaras.each do  |i|  %>
     <% yurukyara_ido = i.ido %>
     <% yurukyara_keido = i.keido %>
-  <% end %>
+    <% end %>
 
-<%# 距離が近いものからソートする %>
+    <%# 距離が近いものからソートする %>
     <%# 距離を計算する, ans配列に答を格納していく %>
     <% ans = Hash.new { |hash, key| hash[key] = {} } %>
     <% for i in 0..9 %> <%# imageの数 %>
-        <%   ans[i] = (yurukyaras[i].ido - yurukyara_ido)**2 + (yurukyaras[i].keido - yurukyara_keido)**2 %>
+    <%   ans[i] = (yurukyaras[i].ido - yurukyara_ido)**2 + (yurukyaras[i].keido - yurukyara_keido)**2 %>
     <% end %>
-
-<%#= p yurukyaras[0].r  %>
 
     <%# 距離が近い順にソートする %>
     <% ans_s = ans.sort{|(k1, v1), (k2, v2)| v2 <=> v1 } %>
@@ -49,5 +46,5 @@
       <a href = "./"> 戻る </a>
     </div>
 
-</body>
-</html>
+  </body>
+  </html>
