@@ -13,58 +13,58 @@
   <hr align="center" noshade width="80%"/>
   <div align="center">
 
-<%= p "入力されたppmキーワードは"%>
-<%= @ppm  %>
+  <%= p "入力されたppmキーワードは"%>
+  <%= @ppm  %>
 
-<%# RGBのピクセル情報を取得し、変数に格納する %>
-<% width = scr.columns %>
-<% hight = scr.rows %>
-<% all_p = width * hight %>
+  <%# RGBのピクセル情報を取得し、変数に格納する %>
+  <% width = scr.columns %>
+  <% hight = scr.rows %>
+  <% all_p = width * hight %>
 
-<% pixels = scr.get_pixels(0, 0, scr.columns, scr.rows) %>
-<% all_r = all_g = all_b = 0 %>
-<% for pi in 0...all_p %>
+  <% pixels = scr.get_pixels(0, 0, scr.columns, scr.rows) %>
+  <% all_r = all_g = all_b = 0 %>
+  <% for pi in 0...all_p %>
   <% all_r += pixels[pi].red %>
   <% all_g += pixels[pi].green %>
   <% all_b += pixels[pi].blue %>
-<% end %>
+  <% end %>
 
-<% pix_clo = all_p * 256 * 256.0 %>
-<% r = all_r / pix_clo %>
-<% g = all_g / pix_clo %>
-<% b = all_b / pix_clo %>
+  <% pix_clo = all_p * 256 * 256.0 %>
+  <% r = all_r / pix_clo %>
+  <% g = all_g / pix_clo %>
+  <% b = all_b / pix_clo %>
 
-<%# データベースを更新する %>
-<% ppm_r = ppm_g = ppm_b = 0 %>
-<% ppms = Image.where(url: @ppm).update(r: r, g: g, b: b) %>
-<% ppms.each do  |i|  %>
-<% ppm_r = i.r %>
-<% ppm_g = i.g %>
-<% ppm_b = i.b %>
-<% end %>
+  <%# データベースを更新する %>
+  <% ppm_r = ppm_g = ppm_b = 0 %>
+  <% ppms = Image.where(url: @ppm).update(r: r, g: g, b: b) %>
+  <% ppms.each do  |i|  %>
+    <% ppm_r = i.r %>
+    <% ppm_g = i.g %>
+    <% ppm_b = i.b %>
+    <% end %>
 
-<%# 類似度を計算する, ans配列に答を格納していく %>
-<% ans = Hash.new { |hash, key| hash[key] = {} } %>
-<% for i in 0..9 %> <%# imageの数 %>
-<%   temp_r = ppm_r * images[i].r %>
-<%   temp_g = ppm_g * images[i].g %>
-<%   temp_b = ppm_b * images[i].b %>
-<%   ans[i] = temp_r + temp_g + temp_b %>
-<% end %>
+    <%# 類似度を計算する, ans配列に答を格納していく %>
+    <% ans = Hash.new { |hash, key| hash[key] = {} } %>
+    <% for i in 0..9 %> <%# imageの数 %>
+    <%   temp_r = ppm_r * images[i].r %>
+    <%   temp_g = ppm_g * images[i].g %>
+    <%   temp_b = ppm_b * images[i].b %>
+    <%   ans[i] = temp_r + temp_g + temp_b %>
+    <% end %>
 
     <%# 類似度別にソートする %>
     <% ans_s = ans.sort{|(k1, v1), (k2, v2)| v2 <=> v1 } %>
     <% sorted_ids = ans_s.map(&:first) %>
 
     <%# 結果を表示する %>
-<% sorted_ids.each.with_index do |id,index| %>
-<p> <%=  index + 1%>番目に似ています</p>
-<img src = "<%= Image.find(id + 1).url %>" width="300"><br>
-<% end %>
+    <% sorted_ids.each.with_index do |id,index| %>
+    <p> <%=  index + 1%>番目に似ています</p>
+    <img src = "<%= Image.find(id + 1).url %>" width="300"><br>
+    <% end %>
 
-            <div align = "center">
-              <a href = "./"> 戻る </a>
-            </div>
-
-          </body>
-          </html>
+    <div align = "center">
+      <a href = "./"> 戻る </a>
+    </div>
+    
+</body>
+</html>

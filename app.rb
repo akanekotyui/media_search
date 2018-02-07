@@ -9,6 +9,8 @@ require 'rmagick'
 set :database, adapter: "sqlite3", database: "images_sqlite3"
 require './models/image.rb'
 
+
+
 get '/' do
     images = Image.all
 erb :index,  locals:{images: images} #ルートにアクセスしたらindex.erbを呼び出す
@@ -21,6 +23,10 @@ end
 
 get '/ppm' do
   erb :ppm
+end
+
+get '/yurukyara' do
+  erb :yurukyara
 end
 
 post '/search.erb' do
@@ -50,4 +56,11 @@ post '/ppm.erb' do
   images = Image.all
   scr = Magick::ImageList.new(@ppm)
   erb :ppm, locals:{images: images, scr: scr}
+end
+
+post '/yurukyara.erb' do
+  @yurukyara = params[:YURUKYARA]
+  yurukyaras = Yurukyara.all
+  scr = Magick::ImageList.new(@yurukyara)
+  erb :yurukyara, locals:{yurukyaras: yurukyaras, scr: scr}
 end

@@ -3,3 +3,9 @@
 
 class Image < ActiveRecord::Base
 end
+
+#ActiveRecordのモデルを作成する
+#YurukyaraモデルとYurukyarasテーブルを作成
+
+class Yurukyara < ActiveRecord::Base
+end
