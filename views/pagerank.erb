@@ -13,22 +13,10 @@
   <hr align="center" noshade width="80%"/>
   <div align="center">
 
-    <%= p "入力されたyurukyaraキーワードは"%>
-    <%= @yurukyara  %>
-
-    <%# 対象のレコードを変数に格納しておく %>
-    <% yurukyara_ido = yurukyara_keido = 0 %>
-    <% yurukyara = Yurukyara.where(url: @yurukyara) %>
-    <% yurukyaras.each do  |i|  %>
-    <% yurukyara_ido = i.ido %>
-    <% yurukyara_keido = i.keido %>
-    <% end %>
-
-    <%# 距離が近いものからソートする %>
-    <%# 距離を計算する, ans配列に答を格納していく %>
+    <%# pagerankが高いものからソートする %>
     <% ans = Hash.new { |hash, key| hash[key] = {} } %>
-    <% for i in 0..9 %> <%# imageの数 %>
-    <%   ans[i] = (yurukyaras[i].ido - yurukyara_ido)**2 + (yurukyaras[i].keido - yurukyara_keido)**2 %>
+    <% for i in 0..7 %>
+    <%   ans[i] = yurukyaras[i].pagerank %>
     <% end %>
 
     <%# 距離が近い順にソートする %>
@@ -37,8 +25,8 @@
 
     <%# 結果を表示する %>
     <% sorted_ids.each.with_index do |id,index| %>
-    <p> <%=  index + 1%>番目に近いです</p>
-    <%= p Yurukyara.find(id + 1).pref %>
+    <p> <%=  index + 1%>番目に高いです</p>
+    <%= p Yurukyara.find(id + 1).pagerank %>
     <img src = "<%= Yurukyara.find(id + 1).url %>" width="300"><br>
     <% end %>
 

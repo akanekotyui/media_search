@@ -59,12 +59,12 @@
     <%# 結果を表示する %>
     <% sorted_ids.each.with_index do |id,index| %>
     <p> <%=  index + 1%>番目に似ています</p>
-    <img src = "<%= Image.find(id + 1).url %>" width="300"><br>
+    <img src = "<%= Image.find(id + 1).url %>" width="300">
     <% end %>
 
     <div align = "center">
       <a href = "./"> 戻る </a>
     </div>
-    
+
 </body>
 </html>

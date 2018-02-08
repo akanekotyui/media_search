@@ -13,20 +13,12 @@
   <hr align="center" noshade width="80%"/>
   <div align="center">
 
-    <form method="post" action="search.erb">
-      <input type="text" name="KEYWORD" size="15"/>
-      <input type="submit" value="検索"/>
+    <form method="post" action="yurukyara.erb">
+      <input type="text" name="YURUKYARA" size="15"/>
+      <input type="submit" value="ゆるキャラ検索"/>
     </form>
 
-    <form method="post" action="same.erb">
-      <input type="text" name="STD" size="15"/>
-      <input type="submit" value="類似検索"/>
-    </form>
-
-    <form method="post" action="ppm.erb">
-      <input type="text" name="PPM" size="15"/>
-      <input type="submit" value="ppm自動検索"/>
-    </form>
+<a href = "./pagerank.erb"> ページランクソート </a>
 
   </div>
 
@@ -36,24 +28,31 @@
 
     <caption>検索対象データ</caption>
 
-
     <tr>
-      <th>ID</th><th>title</th><th>author</th><th>url</th>
+      <th>ID</th><th>name</th><th>pref</th><th>area</th><th>url</th><th>ido</th><th>keido</th><th>PageRank</th>
     </tr>
-    <% images.each do |i| %>
+    <% yurukyaras.each do |i| %>
     <tr>
       <td><%= i.id %></td>
-      <td><%= i.title %></td>
-      <td><%= i.author %></td>
+      <td><%= i.name %></td>
+      <td><%= i.pref %></td>
+      <td><%= i.area %></td>
       <td><%= i.url %></td>
+      <td><%= i.ido %></td>
+      <td><%= i.keido %></td>
+      <td><%= i.pagerank %></td>
     </tr>
     <% end %>
-    <form method="post" action='new'>
+
+    <form method="post" action='new_yurukyara'>
       <tr>
-        <td><input type="string" name="image_id"></td>
-        <td><input type="string" name="title"></td>
-        <td><input type="string" name="author"></td>
+        <td><input type="string" name="id"></td>
+        <td><input type="string" name="name"></td>
+        <td><input type="string" name="pref"></td>
+        <td><input type="text" name="area"></td>
         <td><input type="text" name="url"></td>
+        <td><input type="text" name="ido"></td>
+        <td><input type="text" name="keido"></td>
         <td><input type="submit" value="登録"></td>
       </tr>
     </form>
@@ -63,7 +62,6 @@
 
   <div align="center">
     <a href = "./"> 戻る </a>
-    <a href = "./yurukyara_index.erb"> ゆるキャラページ </a>
   </div>
 
 </body>
